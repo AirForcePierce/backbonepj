@@ -1,12 +1,12 @@
 import Backbone from 'backbone';
 
-let PersonModel = Backbone.Model.extend({
+let HeroModel = Backbone.Model.extend({
 
-  urlRoot: 'https://api.parse.com/1/classes/people',
+  urlRoot: 'https://api.parse.com/1/classes/Heroes',
 
   idAttribute: 'objectId'
 
 });
 
 
-export default PersonModel;
+export default HeroModel;

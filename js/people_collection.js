@@ -1,11 +1,11 @@
 import Backbone from 'backbone';
-import PersonModel from './person_model';
+import HeroModel from './person_model';
 
-let PeopleCollection = Backbone.Collection.extend({
-  
-  url: 'https://api.parse.com/1/classes/people',
+let HeroCollection = Backbone.Collection.extend({
 
-  model: PersonModel,
+  url: 'https://api.parse.com/1/classes/Heroes',
+
+  model: HeroModel,
 
   parse: function(data) {
     return data.results;
@@ -13,4 +13,4 @@ let PeopleCollection = Backbone.Collection.extend({
 
 });
 
-export default PeopleCollection;
+export default HeroCollection;

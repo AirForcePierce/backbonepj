@@ -2,8 +2,8 @@ import $ from 'jquery';
 import _ from 'underscore';
 import moment from 'moment';
 
-const APP_ID = 'Y6FseeUP87GfDrxo6a2KfhpsLcdDTgVpYIUoU86R';
-const API_KEY = 'iFRX3zh4GZSuVlgyQfTcPnqSJdAxeK0ZmDZxY8S8';
+const APP_ID = 'kTjarb1FYuGCJG9n0Cxbc7RfCW68P823t900FUUM';
+const API_KEY = 'utoWNArBMCRntlr3zRWthreyOdJIyvO7XIXGRFIW';
 
 $.ajaxSetup({
   headers: {
@@ -12,27 +12,27 @@ $.ajaxSetup({
   }
 });
 
-import PeopleCollection from './people_collection';
-import PersonTemplate from './person_template';
+import HeroCollection from './people_collection';
+import HeroTemplate from './person_template';
 
-let people = new PeopleCollection();
+let people = new HeroCollection();
 
 
 function renderPeople() {
   // Creating an empty dom node
   let $ul = $('<ul></ul>');
-  
+
   // iterate each of the models
   people.each(function(person){
-    
+
     // person is an instance of PersonModel
 
     // grab raw data from person model
     let data = person.toJSON();
     console.log('data', data);
-    
+
     // pass the data to our template
-    let templateString = PersonTemplate(data);
+    let templateString = HeroTemplate(data);
     console.log('templateString', templateString);
 
     // use templateString to create an li dom node
@@ -49,5 +49,3 @@ function renderPeople() {
 people.fetch().then(renderPeople);
 
 console.log('Hello, World');
-
-

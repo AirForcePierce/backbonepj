@@ -1,8 +1,8 @@
 
-function PersonTemplate(data) {
+function HeroTemplate(data) {
   return `
-    <li>${data.FirstName} is ${data.Age} years old</li>
+    <li> <img src="${data.Image}"> ${data.Name} is from the ${data.Universe}</li>
   `;
 }
 
-export default PersonTemplate;
+export default HeroTemplate;

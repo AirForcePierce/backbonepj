@@ -23,8 +23,8 @@ var _person_template = require('./person_template');
 
 var _person_template2 = _interopRequireDefault(_person_template);
 
-var APP_ID = 'Y6FseeUP87GfDrxo6a2KfhpsLcdDTgVpYIUoU86R';
-var API_KEY = 'iFRX3zh4GZSuVlgyQfTcPnqSJdAxeK0ZmDZxY8S8';
+var APP_ID = 'kTjarb1FYuGCJG9n0Cxbc7RfCW68P823t900FUUM';
+var API_KEY = 'utoWNArBMCRntlr3zRWthreyOdJIyvO7XIXGRFIW';
 
 _jquery2['default'].ajaxSetup({
   headers: {
@@ -84,9 +84,9 @@ var _person_model = require('./person_model');
 
 var _person_model2 = _interopRequireDefault(_person_model);
 
-var PeopleCollection = _backbone2['default'].Collection.extend({
+var HeroCollection = _backbone2['default'].Collection.extend({
 
-  url: 'https://api.parse.com/1/classes/people',
+  url: 'https://api.parse.com/1/classes/Heroes',
 
   model: _person_model2['default'],
 
@@ -96,7 +96,7 @@ var PeopleCollection = _backbone2['default'].Collection.extend({
 
 });
 
-exports['default'] = PeopleCollection;
+exports['default'] = HeroCollection;
 module.exports = exports['default'];
 
 },{"./person_model":3,"backbone":5}],3:[function(require,module,exports){
@@ -112,15 +112,15 @@ var _backbone = require('backbone');
 
 var _backbone2 = _interopRequireDefault(_backbone);
 
-var PersonModel = _backbone2['default'].Model.extend({
+var HeroModel = _backbone2['default'].Model.extend({
 
-  urlRoot: 'https://api.parse.com/1/classes/people',
+  urlRoot: 'https://api.parse.com/1/classes/Heroes',
 
   idAttribute: 'objectId'
 
 });
 
-exports['default'] = PersonModel;
+exports['default'] = HeroModel;
 module.exports = exports['default'];
 
 },{"backbone":5}],4:[function(require,module,exports){
@@ -130,11 +130,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-function PersonTemplate(data) {
-  return "\n    <li>" + data.FirstName + " is " + data.Age + " years old</li>\n  ";
+function HeroTemplate(data) {
+  return "\n    <li> <img src=\"" + data.Image + "\"> " + data.Name + " is from the " + data.Universe + "</li>\n  ";
 }
 
-exports["default"] = PersonTemplate;
+exports["default"] = HeroTemplate;
 module.exports = exports["default"];
 
 },{}],5:[function(require,module,exports){
